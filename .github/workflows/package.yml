@@ -32,8 +32,9 @@ jobs:
           chmod +x gradlew
           ./gradlew app:assembleRelease
       - name : upload apk
-        uses: actions/upload-artifact@master
+        run: ./gradlew build
+        uses: actions/upload-artifact@v2
         if: always()
         with:
           name: xupdate_apk
-          path: ${{ github.workspace }}/app/build/outputs/apk/release
+          path: build/libs
