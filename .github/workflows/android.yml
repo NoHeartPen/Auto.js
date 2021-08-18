@@ -28,5 +28,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-          name: xupdate_apk
+          name: Auto.js_4.0.5_Alpha
           path: ${{ github.workspace }}/app/build/outputs/apk/coolapk/debug
