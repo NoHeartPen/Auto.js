@@ -23,3 +23,10 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew app:assembleDebug
+
+    - name : upload apk
+      uses: actions/upload-artifact@master
+      if: always()
+      with:
+          name: xupdate_apk
+          path: ${{ github.workspace }}/app/build/outputs/apk/coolapk/debug
